@@ -2,6 +2,7 @@ import { applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import {castomThunk} from './castom'
+import createSagaMiddleware from 'redux-saga';
 
 const logger = createLogger({
     duration: true,
@@ -15,8 +16,10 @@ const logger = createLogger({
     }
 })
 
+export const sagaMiddleware = createSagaMiddleware();
+
 const composeEnhancers = __DEV__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const middleware = [castomThunk];
+const middleware = [sagaMiddleware, castomThunk];
 
 if(__DEV__) {
     middleware.push(logger);
