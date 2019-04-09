@@ -1,7 +1,7 @@
 // Core
 import React, {Component} from 'react';
 import {hot} from 'react-hot-loader';
-import {store} from '../../init/store';
+import {store} from '../../../bus/init/store';
 import {showNextPhoto, showPrevPhoto, showSelectedPhoto} from '../../bus/gallery/actions';
 import cx from 'classnames'
 // Instruments

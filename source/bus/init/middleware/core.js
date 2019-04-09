@@ -1,7 +1,6 @@
 import { applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
-import {castomThunk} from './castom'
+import {castomThunk} from './castom';
 import createSagaMiddleware from 'redux-saga';
 
 const logger = createLogger({

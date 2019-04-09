@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Instruments
-import { store } from './basic-redux/init/store';
+import { store } from './bus/init/store';
 import './theme/init';
 
 // Intro

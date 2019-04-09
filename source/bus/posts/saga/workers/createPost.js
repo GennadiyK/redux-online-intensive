@@ -1,11 +1,10 @@
-import { api } from '../../../../../REST';
+import { api } from '../../../../REST/index';
 import { postsActions} from '../../actions';
 import { put, apply } from 'redux-saga/effects';
-import { uiActions } from '../../../../../bus/ui/actions';
+import { uiActions } from '../../../ui/actions';
 
 export function* createPost({ payload: comment }) {
     try {
-        q+2
          yield put(uiActions.startFetching());
         const response = yield apply(api, api.posts.create, [comment]);
         const { data: post, message } = yield apply(response, response.json);
