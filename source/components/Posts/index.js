@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-       actions: bindActionCreators({fetchPostsAsync: postsActions.fetchPostsAsync, createPostAsync: postsActions.createPostAsync}, dispatch),
+       actions: bindActionCreators({fetchPosts: postsActions.fetchPosts, createPostAsync: postsActions.createPostAsync}, dispatch),
     };
 };
 
@@ -40,7 +40,7 @@ export default class Posts extends Component {
     componentDidMount () {
         const { actions } = this.props;
 
-        actions.fetchPostsAsync();
+        actions.fetchPosts();
     }
 
     render () {

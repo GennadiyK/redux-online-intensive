@@ -14,13 +14,10 @@ export const postsActions = {
             payload: post,
         };
     },
-    fetchPostsAsync: () => async (dispatch) => {
+    fetchPosts: () => async (dispatch) => {
         dispatch({
-            type: types.FETCH_POSTS_ASYNC,
+            type: types.FETCH_POSTS,
         });
-        const response = await api.posts.fetch();
-        const result = await response.json();
-        dispatch(postsActions.fillPosts(result.data));
     },
     createPostAsync: (comment) => {
         return {
