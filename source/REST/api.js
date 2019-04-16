@@ -12,6 +12,16 @@ export const api = {
                 body:    JSON.stringify(userinfo),
             });
         },
+        login (userinfo) {
+            return fetch(`${MAIN_URL}/user/login`, {
+                method:   'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-no-auth': groupId,
+                },
+                body:    JSON.stringify(userinfo),
+            });
+        },
     },
     posts: {
         fetch () {
