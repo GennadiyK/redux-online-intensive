@@ -11,7 +11,7 @@ import Styles from './styles.m.css';
 // Components
 import { Composer, Catcher, Post } from '../../components';
 
-import { postsActions } from '../../bus/posts/actions'
+import { postsActions } from '../../bus/posts/actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -22,7 +22,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-       actions: bindActionCreators({fetchPosts: postsActions.fetchPosts, createPostAsync: postsActions.createPostAsync}, dispatch),
+       actions: bindActionCreators(
+           {
+               fetchPosts: postsActions.fetchPosts,
+               createPostAsync: postsActions.createPostAsync,
+               removePostAsync: postsActions.removePostAsync,
+           },
+           dispatch),
     };
 };
 
