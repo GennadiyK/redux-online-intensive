@@ -7,4 +7,9 @@ export const profileActions = {
             payload: profile,
         };
     },
+    cleaProfile: ()=> {
+        return {
+            type: types.CLEAR_PROFILE,
+        };
+    },
 };

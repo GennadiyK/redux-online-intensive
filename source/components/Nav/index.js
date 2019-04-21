@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import cx from 'classnames';
-
+import {authAction} from "../../bus/auth/actions";
 // Instruments
 import Styles from './styles.m.css';
 import { book } from '../../navigation/book';
@@ -15,15 +15,16 @@ const mapStateToProps = (state) => {
     };
 }
 
-@connect(mapStateToProps)
+const mapDispatchToProps = {
+    logoutAsync: authAction.logoutAsync
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
 
 export default class Nav extends Component {
     static defaultProps = {
         // State
         isOnline:        false,
-
-        // Actions
-        logoutAsync: () => {},
     };
 
     _getNav = () => {
@@ -58,6 +59,7 @@ export default class Nav extends Component {
     };
 
     _logout = () => {
+        console.log(this.props)
         this.props.logoutAsync();
     };
 
