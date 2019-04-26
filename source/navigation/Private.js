@@ -7,7 +7,20 @@ import { Profile, Feed, NewPassword } from '../pages';
 
 import { book } from './book'
 
+import { socket } from '../bus/init/socket'
+
 export default class Private extends Component {
+    componentDidMount () {
+        console.log(this.props)
+        const { listeningPosts } = this.props;
+
+        listeningPosts();
+    }
+
+    componentWillUnmount () {
+        socket.removeListener('create');
+    }
+
     render () {
         return (
             <Switch>
