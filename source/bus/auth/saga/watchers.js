@@ -22,6 +22,8 @@ export function* watchInitialize() {
     yield takeEvery(types.INITIALIZE_ASYNC, initialize);
 }
 
+
+
 export function* watchAuth() {
     yield all([call(watchSignup), call(watchLogin), call(watchLogout), call(watchAuthenticate), call(watchInitialize)]);
 }
