@@ -1,4 +1,5 @@
 import { api } from '../../../../REST';
+import { actions } from 'react-redux-form';
 import { authAction } from '../../actions';
 import { put, apply } from 'redux-saga/effects';
 import { replace } from 'react-router-redux';
@@ -28,6 +29,7 @@ export function* logout() {
         yield put(postsActions.clearPosts());
         yield put(usersActions.clearUsers());
         yield put(uiActions.stopFetching());
+        yield put(actions.reset('forms.user'));
         yield put(authAction.logout());
         yield put(replace(book.login));
     }
