@@ -14,8 +14,12 @@ export const soketActions = {
     listeningPosts: () => (dispatch, getState) => {
         socket.on('create', (event) => {
             const {data: post } = JSON.parse(event);
-            dispatch(postsActions.createPost(post))
-        })
+            dispatch(postsActions.createPost(post));
+        });
+        socket.on('remove', (event) => {
+            const {data: post } = JSON.parse(event);
+            dispatch(postsActions.removePost(post));
+        });
         socket.on('like', (event) => {
             const {data, meta } = JSON.parse(event);
             if (meta.action === 'like') {
@@ -27,7 +31,8 @@ export const soketActions = {
             } else {
                 dispatch(postsActions.unlikePost(data))
             }
-        })
+        });
+
     }
 }
 
