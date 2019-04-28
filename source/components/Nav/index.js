@@ -56,7 +56,6 @@ export default class Nav extends Component {
     };
 
     _logout = () => {
-        console.log(this.props)
         this.props.logoutAsync();
     };
 

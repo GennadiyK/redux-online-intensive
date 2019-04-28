@@ -11,7 +11,6 @@ import { socket } from '../bus/init/socket'
 
 export default class Private extends Component {
     componentDidMount () {
-        console.log(this.props)
         const { listeningPosts } = this.props;
 
         listeningPosts();
