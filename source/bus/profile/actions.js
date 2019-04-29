@@ -30,4 +30,10 @@ export const profileActions = {
             payload: newAvatarUrl,
         };
     },
+    updatePasswordAsync: (passwordData)=> {
+        return {
+            type: types.UPDATE_PASSWORD_ASYNC,
+            payload: passwordData,
+        };
+    },
 };
