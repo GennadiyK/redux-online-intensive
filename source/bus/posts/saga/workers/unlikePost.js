@@ -7,7 +7,6 @@ export function* unlikePost({ payload: postId }) {
     try {
         yield put(uiActions.startFetching());
         const response = yield apply(api, api.posts.like, [postId]);
-console.log('####', response)
         if (response.status !== 204) {
             const { message } = yield apply(response, response.json);
             throw new Error( message );
