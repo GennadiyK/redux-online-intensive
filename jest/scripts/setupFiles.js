@@ -56,7 +56,7 @@ const newAvatar = ['avatar'];
 const newPassword = {
     oldPassword: '123456789',
     newPassword: '12345'
-}
+};
 
 global.__ = {
     userProfile,
