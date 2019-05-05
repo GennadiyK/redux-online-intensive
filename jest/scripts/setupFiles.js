@@ -47,6 +47,17 @@ const fetchResponseFail400 = {
 
 const url = 'https://www.url.com';
 
+const newName = {
+    firstName: 'Walter',
+    lastName: 'White',
+};
+
+const newAvatar = ['avatar'];
+const newPassword = {
+    oldPassword: '123456789',
+    newPassword: '12345'
+}
+
 global.__ = {
     userProfile,
     errorMessage,
@@ -59,6 +70,9 @@ global.__ = {
     fetchResponseFail400,
     credentials,
     url,
+    newName,
+    newAvatar,
+    newPassword,
 };
 global.fetch = fetch;
 global.localStorage = new LocalStorage();

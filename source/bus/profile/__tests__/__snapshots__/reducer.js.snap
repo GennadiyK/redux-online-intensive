@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile reducer show initial state by default 1`] = `
+Immutable.Map {
+  "id": "",
+  "firstName": "",
+  "lastName": "",
+  "avatar": "",
+  "token": "",
+}
+`;
