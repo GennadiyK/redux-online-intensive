@@ -11,7 +11,7 @@ const saga = cloneableGenerator(signup)(signupAction);
 
 let clone = null;
 
-describe("signu saga", () => {
+describe("signup saga", () => {
   describe("should pass until response received", () => {
     test('should dispatch "startFetching" action', () => {
       expect(saga.next().value).toEqual(put(uiActions.startFetching()));
